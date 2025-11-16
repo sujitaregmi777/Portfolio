@@ -65,7 +65,7 @@ export default function Home() {
           Contact Me
         </a>
         <a
-          href="/public/Resume.pdf"
+          href="/Resume.pdf"
           download
           className="px-6 py-2.5 rounded-xl font-medium border
                      border-emerald-600 text-emerald-700
