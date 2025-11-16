@@ -1,51 +1,80 @@
 import { motion } from "framer-motion";
 
-function Home() {
-
+export default function Home() {
   const words = ["Hi,", "I'm", "Sujita", "Regmi"];
+
   return (
-    <section id="home"
-      className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-emerald-50 dark:from-gray-900 dark:to-gray-800"
+    <motion.section
+      id="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen flex flex-col items-center justify-center text-center px-6 
+                 bg-gradient-to-b from-white to-emerald-50 
+                 dark:from-gray-900 dark:to-gray-800"
     >
-      {/* <motion.img
-        src=""
-        alt="profile"
-        className="w-40 h-40 rounded-full shadow-lg mb-4 object-cover"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      /> */}
-      { words.map((word , index) => (
-        <motion.span
-        key = { index }
-        initial = {{ opacity : 0, y: -20 }}
-        animate = {{ opacity:1, y: 0 }}
+
+      <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 leading-tight">
+        <motion.img src="/IMG_8942.jpg" 
+        alt="profile" className="w-40 h-40 rounded-full shadow-lg mb-4 object-cover" 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }} />
+        {words.map((word, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: index * 0.4,
+              delay: index * 0.25,
+              type: "spring",
+              stiffness: 120,
             }}
-        className=" inline-block mr-2 font-bold text-blue-900"
-        >
-          { word } 
-        </motion.span>
-      )
-      ) }
-      <p className="text-gray-600 dark:text-gray-200 mt-2">
-        Computer Engineering Student | Web Developer
-      </p>
-      <div className="mt-6 flex gap-4">
+            className="inline-block mr-2 bg-clip-text text-transparent 
+                       bg-gradient-to-r from-blue-700 to-emerald-600 
+                       drop-shadow-sm"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </div>
+
+      
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-xl"
+      >
+        Computer Engineering Student 
+      </motion.p>
+
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="mt-8 flex gap-5"
+      >
         <a
           href="#contact"
-          className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-500 transition"
+          className="px-6 py-2.5 rounded-xl text-white font-medium
+                    bg-emerald-600 hover:bg-emerald-500 
+                    transition shadow-md hover:shadow-lg active:scale-95"
         >
           Contact Me
         </a>
         <a
-          href="/resume.pdf"
+          href="/public/Resume.pdf"
           download
-          className="border border-emerald-600 text-emerald-600 px-4 py-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-gray-700 transition"
-        >Download Resume</a>
-      </div>
-    </section>
+          className="px-6 py-2.5 rounded-xl font-medium border
+                     border-emerald-600 text-emerald-700
+                     hover:bg-emerald-50 dark:hover:bg-gray-700
+                     transition shadow-sm hover:shadow-md active:scale-95"
+        >
+          Download Resume
+        </a>
+      </motion.div>
+    </motion.section>
   );
 }
-export default Home;
