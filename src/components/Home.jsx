@@ -64,9 +64,8 @@ export default function Home() {
         >
           Contact Me
         </a>
-        <a
-          href="/Resume.pdf"
-          download
+        <a href="/Resume.pdf"
+          download = "Resume.pdf"
           className="px-6 py-2.5 rounded-xl font-medium border
                      border-emerald-600 text-emerald-700
                      hover:bg-emerald-50 dark:hover:bg-gray-700
