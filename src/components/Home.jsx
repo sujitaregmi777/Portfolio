@@ -15,8 +15,8 @@ export default function Home() {
     >
 
       <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 leading-tight">
-        <motion.img src="/IMG_8942.jpg" 
-        alt="profile" className="w-40 h-40 rounded-full shadow-lg mb-4 object-cover" 
+        <motion.img src="" 
+        // alt="profile" className="w-40 h-40 rounded-full shadow-lg mb-4 object-cover" 
         initial={{ opacity: 0, y: -20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8 }} />
